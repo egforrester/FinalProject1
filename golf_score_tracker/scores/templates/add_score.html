@@ -11,13 +11,13 @@
         .scorecard-container {
             background: rgba(255, 255, 255, 0.8);
             padding: 20px;
-            margin-top: 20px;
             border-radius: 8px;
+            margin-top: 20px;
         }
         .hole-input {
-            margin-top: 5px;
-            margin-bottom: 5px;
+            padding: 5px;
             width: 60px; /* Adjust width as needed */
+            text-align: center;
         }
         .header {
             text-align: center;
@@ -26,33 +26,33 @@
     </style>
 </head>
 <body>
-    <div class="container scorecard-container">
-        <h1 class="header">Add Golf Score</h1>
-        <form method="post">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="player_name">Player Name:</label>
-                <input type="text" class="form-control" id="player_name" name="player_name" required>
-            </div>
-            <div class="form-group">
-                <label for="date">Date:</label>
-                <input type="date" class="form-control" id="date" name="date" required>
-            </div>
-            <div class="form-group">
-                <label for="course_name">Course Name:</label>
-                <input type="text" class="form-control" id="course_name" name="course_name" required>
-            </div>
-            {% for i in range(18) %}
-            <div class="form-group">
-                <label for="hole_{{ i }}">Hole {{ i+1 }} Score:</label>
-                <input type="number" class="form-control hole-input" id="hole_{{ i }}" name="hole_{{ i }}" min="1" max="10" required>
-            </div>
-            {% endfor %}
-            <button type="submit" class="btn btn-primary">Submit Score</button>
-        </form>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<div class="container scorecard-container">
+    <h1 class="header">Add Golf Score</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="player_name">Player Name:</label>
+            <input type="text" class="form-control" id="player_name" name="player_name" required>
+        </div>
+        <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="date" class="form-control" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+            <label for="course_name">Course Name:</label>
+            <input type="text" class="form-control" id="course_name" name="course_name" required>
+        </div>
+        {% for i in holes_range %}
+        <div class="form-group">
+            <label for="hole_{{ i }}">Hole {{ i }} Score:</label>
+            <input type="number" class="form-control hole-input" id="hole_{{ i }}" name="hole_{{ i }}" min="1" max="10" required>
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Submit Score</button>
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

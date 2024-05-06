@@ -9,17 +9,19 @@ def all_scores(request):
 
 def add_score(request):
     if request.method == 'POST':
-        pass
         new_score = GolfScore(
             player_name=request.POST['player_name'],
             date=request.POST['date'],
             course_name=request.POST['course_name'],
         )
         for hole_number in range(1, 19):
-            setattr(new_score, f'hole_{hole_number}', int(request.POST.get(f'hole_{hole_number}', 0)))
+            hole_score = request.POST.get(f'hole_{hole_number}', 0)
+            setattr(new_score, f'hole_{hole_number}', int(hole_score))
         new_score.save()
-        return redirect('all_scores')  # Redirect to the score listing page after the form is processed
-    return render(request, 'add_score.html')
+        return redirect('all_scores')
+    else:
+        context = {'holes_range': range(1, 19)}  # Add this line
+        return render(request, 'add_score.html', context)
 
 
 def home(request):
