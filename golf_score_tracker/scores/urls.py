@@ -1,9 +1,8 @@
 # scores/urls.py
-
 from django.urls import path
 from . import views
 
-app_name = 'scores'  # This sets up a namespace for the app's URLs.
+app_name = 'scores'
 
 urlpatterns = [
     path('', views.home, name='home'),

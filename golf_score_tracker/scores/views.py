@@ -18,7 +18,7 @@ def add_score(request):
             hole_score = request.POST.get(f'hole_{hole_number}', 0)
             setattr(new_score, f'hole_{hole_number}', int(hole_score))
         new_score.save()
-        return redirect('all_scores')
+        return redirect('scores:all_scores')
     else:
         context = {'holes_range': range(1, 19)}  # Add this line
         return render(request, 'add_score.html', context)
