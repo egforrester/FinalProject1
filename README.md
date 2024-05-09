@@ -5,11 +5,13 @@
 
 # Project Title
 
-Simple overview of use/purpose.
+Golf Tracker Plus
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+My final project is a website using Django in order to track golf score after your round is complete. Using the
+website you are able to add scores from each hole which tally at the end to give you your final score. You are
+also able to add the course you played. 
 
 ## Getting Started
 
@@ -21,8 +23,7 @@ An in-depth paragraph about your project and overview of use.
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* python -m pip install Django==5.0.6
 
 ### Executing program
 
@@ -35,37 +36,21 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
 
 ## Authors
 
 Contributors names and contact info
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+Ethan Forrester
+
 
 ## Version History
 
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
+* 3.12 Python
+* 5.0.4 Django
 
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
 
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+* Chatgpt (https://chatgpt.com/?oai-dm=1)
